@@ -52,7 +52,7 @@ _USED_TABLES=()
 _USED_TRIGGERS=()
 _USED_FUNCTIONS=()
 _USED_PROCEDURES=()
-_SCRIPTS_LIST=(temp_sql_scripts/test_1.sql temp_sql_scripts/test_2.sql temp_sql_scripts/test_3.sql)
+_SCRIPTS_LIST=(temp_sql_scripts/test_1.sql)
 echo hello
 # _SCRIPTS_LIST=( $( mysql --batch mysql -u $username -p$password -N -e "SELECT SCRIPT_name  FROM pixid.SCRIPTs WHERE script_handled ='encoure'" ) )
 printf '%s\n' "${_SCRIPTS_LIST[@]}"
