@@ -5,6 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 bat 'sh  ./test.sh root med123'
+                bat 'docker exec -i some-mysql mysql -uroot -pmed123  -Bse "show databases;"'
                 
             }
         }
