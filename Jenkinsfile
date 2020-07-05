@@ -24,7 +24,7 @@ pipeline {
     }
     post { 
         always { 
-            echo 'I will always say Hello again!'
+            emailext body: 'A Test EMail', recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Test'
         }
     }
 }
