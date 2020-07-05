@@ -1,3 +1,3 @@
 use db;
 ALTER TABLE place
-  dADD lane int NOT NULL DEFAULT '0';
+  ADD lane int NOT NULL DEFAULT '0';
