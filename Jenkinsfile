@@ -4,7 +4,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                bat 'groovy test.gvy'
+                bat 'sh test.sh'
+                
             }
         }
         stage('Test') {
