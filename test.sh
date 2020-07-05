@@ -145,7 +145,7 @@ _USED_TABLES=($(printf "%s\n" "${_USED_TABLES[@]}" | sort -u | tr '\n' ' '))
 
 for DB in ${_USED_DBS[@]}
 do
-	_OUTPUT="${_OUTPUT} \nCREATE DATABASE $DB;"
+	_OUTPUT="${_OUTPUT} \nDROP DATABASE IF EXISTS $DB;CREATE DATABASE $DB;"
 done
 for table in ${_USED_TABLES[@]}
 do
