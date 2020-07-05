@@ -6,8 +6,8 @@ pipeline {
             steps {
                 bat 'sh  ./test.sh root med123'
                 bat 'docker exec -i some-mysql mysql -uroot -pmed123  -Bse "drop database if exists test;create database test;"'
-                bat 'docker exec -i some-mysql mysql -uroot -pmed123  test < "C:\\Program Files (x86)\\Jenkins\\workspace\\DB_Continuous_Delivery\\output.sql"'
-                bat 'docker exec -i some-mysql mysql -uroot -pmed123  test < "C:\\Program Files (x86)\\Jenkins\\workspace\\DB_Continuous_Delivery\\temp_sql_scripts\\test1.sql"'
+                bat 'docker exec -i some-mysql mysql -uroot -pmed123   < "C:\\Program Files (x86)\\Jenkins\\workspace\\DB_Continuous_Delivery\\output.sql"'
+                bat 'docker exec -i some-mysql mysql -uroot -pmed123   < "C:\\Program Files (x86)\\Jenkins\\workspace\\DB_Continuous_Delivery\\temp_sql_scripts\\test1.sql"'
                 
             }
         }
