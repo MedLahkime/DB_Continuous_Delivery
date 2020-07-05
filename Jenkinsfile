@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                bat 'sh -c ./test.sh'
+                bat 'sh -c ./test.sh root med123'
                 
             }
         }
