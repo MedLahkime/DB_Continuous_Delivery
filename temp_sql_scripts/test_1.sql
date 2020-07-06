@@ -1,3 +1,3 @@
 use db;
 ALTER TABLE place
-  ADD Ggez int NOT NULL DEFAULT '0';
+  ADD Ggsez int NOT NULL DEFAULT '0';
