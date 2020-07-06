@@ -5,10 +5,13 @@ pipeline {
         stage('Clone N Test') {
             steps {
                 bat 'sh  ./test.sh root med123'
+             }
+        }
+        stage('Create Clone') {
+            steps {
                 bat 'docker exec -i some-mysql mysql -uroot -pmed123  -Bse "drop database if exists test;create database test;"'
                 bat 'docker exec -i some-mysql mysql -uroot -pmed123   < "C:\\Program Files (x86)\\Jenkins\\workspace\\DB_Continuous_Delivery\\output.sql"'
                 bat 'docker exec -i some-mysql mysql -uroot -pmed123   < ".\\temp_sql_scripts\\test_1.sql"'
-                
             }
         }
         stage('Apply in Prod') {
@@ -16,11 +19,7 @@ pipeline {
                 bat 'mysql -uroot -pmed123   < ".\\temp_sql_scripts\\test_1.sql"'
             }
         }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
-            }
-        }
+        
     }
     post { 
         always { 
