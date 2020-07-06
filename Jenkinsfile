@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {            PATH = "C:\\Program Files\\Git\\usr\\bin;C:\\Program Files\\Git\\bin;${env.PATH}"         } 
     stages {
-        stage('Build') {
+        stage('Clone N Test') {
             steps {
                 bat 'sh  ./test.sh root med123'
                 bat 'docker exec -i some-mysql mysql -uroot -pmed123  -Bse "drop database if exists test;create database test;"'
@@ -11,9 +11,9 @@ pipeline {
                 
             }
         }
-        stage('Test') {
+        stage('Apply in Prod') {
             steps {
-                echo 'Testing..'
+                bat 'mysql -uroot -pmed123   < ".\\temp_sql_scripts\\test_1.sql"'
             }
         }
         stage('Deploy') {
