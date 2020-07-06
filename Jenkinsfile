@@ -2,7 +2,11 @@ pipeline {
     agent any
     environment {            PATH = "C:\\Program Files\\Git\\usr\\bin;C:\\Program Files\\Git\\bin;${env.PATH}"         } 
     stages {
-     
+        stage('Clone N Test') {
+            steps {
+                bat 'sh  ./test.sh root med123'
+             }
+        }
         stage('Create Clone') {
             steps {
                 bat 'docker exec -i some-mysql mysql -uroot -pmed123   < "C:\\Program Files (x86)\\Jenkins\\workspace\\DB_Continuous_Delivery\\output.sql"'
