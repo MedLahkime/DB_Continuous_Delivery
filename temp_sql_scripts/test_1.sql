@@ -1,3 +1,3 @@
-use db;
-ALTER TABLE place
-  ADD Ggez_4 int NOT NULL DEFAULT '0';
+use classicmodels;
+
+select * from orderdetails;
