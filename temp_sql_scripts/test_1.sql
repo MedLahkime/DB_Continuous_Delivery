@@ -1,3 +1,4 @@
 use classicmodels;
 
-select * from orderdetails;
+ALTER TABLE orderdetails
+  ADD Ggez_col int NOT NULL DEFAULT '0';
