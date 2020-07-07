@@ -27,11 +27,6 @@ pipeline {
                 bat 'echo hello'
             }
         }
-        stage('Unit test') {
-            steps {
-                bat 'echo hello'
-            }
-        }
         stage('copy WAR') {
             steps {
                 bat 'echo hello'
@@ -44,7 +39,7 @@ pipeline {
         }
         stage('Database migration') {
             steps {
-               
+               bat 'ggez echo hello'
             }
         }
         
