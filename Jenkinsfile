@@ -2,20 +2,49 @@ pipeline {
     agent any
     environment {            PATH = "C:\\Program Files\\Git\\usr\\bin;C:\\Program Files\\Git\\bin;${env.PATH}"         } 
     stages {
-        stage('Clone DB') {
+        stage('Check preconditions') {
             steps {
-                bat 'sh  ./test.sh root med123'
+                bat 'echo hello'
              }
         }
-        stage('Test SQL Script ') {
+        stage('Setup ') {
             steps {
-                bat 'docker exec -i some-mysql mysql -uroot -pmed123   < "C:\\Program Files (x86)\\Jenkins\\workspace\\DB_Continuous_Delivery\\output.sql"'
-                bat 'docker exec -i some-mysql mysql -uroot -pmed123   < ".\\temp_sql_scripts\\test_1.sql"'
+                bat 'echo hello'
             }
         }
-        stage('Apply in Prod') {
+        stage('Unit test') {
             steps {
-                bat 'mysql -uroot -pmed123   < ".\\temp_sql_scripts\\test_1.sql"'
+                bat 'echo hello'
+            }
+        }
+        stage('Integration test') {
+            steps {
+                bat 'echo hello'
+            }
+        }
+        stage('Build env') {
+            steps {
+                bat 'echo hello'
+            }
+        }
+        stage('Unit test') {
+            steps {
+                bat 'echo hello'
+            }
+        }
+        stage('copy WAR') {
+            steps {
+                bat 'echo hello'
+            }
+        }
+        stage('Fetch version') {
+            steps {
+                bat 'echo hello'
+            }
+        }
+        stage('Database migration') {
+            steps {
+               
             }
         }
         
